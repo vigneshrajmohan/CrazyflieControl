@@ -46,11 +46,8 @@ def cutthewings():
     crazyflie.param.set_value("motors.motorPowerM4","0")
 
 
-try:
-    cflib.crtp.init_drivers()
-    crazyflie = Crazyflie()
-    crazyflie.connected.add_callback(connected)
-    connect()
-except e:
-    print(e)
-    disconnect()
+
+cflib.crtp.init_drivers()
+crazyflie = Crazyflie()
+crazyflie.connected.add_callback(connected)
+connect()
