@@ -24,7 +24,7 @@ def connected():
 try:
     cflib.crtp.init_drivers()
     crazyflie = Crazyflie()
-    crazyflie.connected.add_callback(connected())
+    crazyflie.connected.add_callback(connected)
     connect()
 except:
     disconnect()
