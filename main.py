@@ -22,8 +22,8 @@ def connected(*args):
     crazyflie.param.set_value("motors.motorPowerM2","5000")
     crazyflie.param.set_value("motors.motorPowerM3","5000")
     crazyflie.param.set_value("motors.motorPowerM4","5000")
-    time.sleep(5)
-    cutthewings()
+    #time.sleep(5)
+    #cutthewings()
 
 
 
