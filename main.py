@@ -51,5 +51,6 @@ try:
     crazyflie = Crazyflie()
     crazyflie.connected.add_callback(connected)
     connect()
-except:
+except e:
+    print(e)
     disconnect()
