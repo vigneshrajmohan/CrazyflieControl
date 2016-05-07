@@ -1,6 +1,8 @@
 from cflib.crazyflie import Crazyflie
 from cflib.utils import callbacks
 import cflib.crtp
+import time
+from time import sleep
 
 
 def connect():
@@ -16,10 +18,27 @@ def disconnect():
 
 def connected(*args):
     # Code here
+    fly()
+    time.sleep(5)
+    cutthewings()
+
+
+
+def fly():
+#function
     crazyflie.param.set_value("motors.motorPowerM1","5000")
     crazyflie.param.set_value("motors.motorPowerM2","5000")
     crazyflie.param.set_value("motors.motorPowerM3","5000")
     crazyflie.param.set_value("motors.motorPowerM4","5000")
+
+def cutthewings():
+#function
+    crazyflie.param.set_value("motors.motorPowerM1","000")
+    crazyflie.param.set_value("motors.motorPowerM2","000")
+    crazyflie.param.set_value("motors.motorPowerM3","000")
+    crazyflie.param.set_value("motors.motorPowerM4","000")
+
+
 
 try:
     cflib.crtp.init_drivers()
