@@ -16,10 +16,10 @@ def disconnect():
 
 def connected(*args):
     # Code here
-    crazyflie.param.set_value("motors.motorPowerM1","50000")
-    crazyflie.param.set_value("motors.motorPowerM2","50000")
-    crazyflie.param.set_value("motors.motorPowerM3","50000")
-    crazyflie.param.set_value("motors.motorPowerM4","50000")
+    crazyflie.param.set_value("motors.motorPowerM1","5000")
+    crazyflie.param.set_value("motors.motorPowerM2","5000")
+    crazyflie.param.set_value("motors.motorPowerM3","5000")
+    crazyflie.param.set_value("motors.motorPowerM4","5000")
 
 try:
     cflib.crtp.init_drivers()
