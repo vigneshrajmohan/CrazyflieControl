@@ -18,12 +18,9 @@ def disconnect():
 
 def connected(*args):
     # Code here
-    #crazyflie.param.set_value("motors.motorPowerM1","5000")
-    #crazyflie.param.set_value("motors.motorPowerM2","5000")
-    #crazyflie.param.set_value("motors.motorPowerM3","5000")
-    #crazyflie.param.set_value("motors.motorPowerM4","5000")
+    fly()
     #time.sleep(5)
-    cutthewings()
+    #cutthewings()
 
 
 
