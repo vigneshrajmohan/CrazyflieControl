@@ -30,6 +30,7 @@ def connected(*args):
     cutthewings()
     time.sleep(10)
     cutthewings()
+    print("This is the end")
 
 def fly():
 #function
