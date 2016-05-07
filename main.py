@@ -18,9 +18,9 @@ def disconnect():
 
 def connected(*args):
     # Code here
-    fly()
-    #time.sleep(5)
-    #cutthewings()
+    #fly()
+    time.sleep(1)
+    cutthewings()
 
 
 
