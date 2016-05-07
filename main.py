@@ -27,8 +27,11 @@ def connected(*args):
 
 def fly():
 #function
-    crazyflie.param.set_value("motors.motorPowerM1","5000")
+
     crazyflie.param.set_value("motors.motorPowerM2","5000")
+
+    crazyflie.param.set_value("motors.motorPowerM1","5000")
+    #crazyflie.param.set_value("motors.motorPowerM2","5000")
     crazyflie.param.set_value("motors.motorPowerM3","5000")
     crazyflie.param.set_value("motors.motorPowerM4","5000")
 
@@ -38,7 +41,6 @@ def cutthewings():
     crazyflie.param.set_value("motors.motorPowerM2","0")
     crazyflie.param.set_value("motors.motorPowerM3","0")
     crazyflie.param.set_value("motors.motorPowerM4","0")
-
 
 
 try:
