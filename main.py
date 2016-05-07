@@ -6,7 +6,7 @@ import cflib.crtp
 def connect():
     available = cflib.crtp.scan_interfaces()
     for i in available:
-        print("Interface with URI {0} found and name/comment {1}".format(i[0], i[1])
+        print("Interface with URI {0} found and name/comment {1}".format(i[0], i[1]))
     address = input("Please enter the connection string:  ")
     crazyflie.open_link("radio://0/80/250K")
 
