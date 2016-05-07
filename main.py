@@ -14,7 +14,7 @@ def connect():
 def disconnect():
     crazyflie.close_link()
 
-def connected():
+def connected(*args):
     # Code here
     crazyflie.param.set_value("motors.motorPowerM1","50000")
     crazyflie.param.set_value("motors.motorPowerM2","50000")
