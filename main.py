@@ -18,16 +18,20 @@ def disconnect():
 
 def connected(*args):
     # Code here
-    for i in range(3000, 15001, 1000):
-       crazyflie.param.set_value("motors.motorPowerM1", str(i))
-       crazyflie.param.set_value("motors.motorPowerM2", str(i))
-       crazyflie.param.set_value("motors.motorPowerM3", str(i))
-       crazyflie.param.set_value("motors.motorPowerM4", str(i))
-       print(i)
-
-    time.sleep(20)
-    cutthewings()
-    print("This is the end")
+    crazyflie.param.set_value("motors.motorPowerM1","5000")
+    crazyflie.param.set_value("motors.motorPowerM2","5000")
+    crazyflie.param.set_value("motors.motorPowerM3","5000")
+    crazyflie.param.set_value("motors.motorPowerM4","5000")
+    # for i in range(3000, 15001, 1000):
+    #    crazyflie.param.set_value("motors.motorPowerM1", str(i))
+    #    crazyflie.param.set_value("motors.motorPowerM2", str(i))
+    #    crazyflie.param.set_value("motors.motorPowerM3", str(i))
+    #    crazyflie.param.set_value("motors.motorPowerM4", str(i))
+    # #    print(i)
+    #
+    # time.sleep(20)
+    # cutthewings()
+    # print("This is the end")
 
 def fly():
 #function
