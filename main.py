@@ -17,5 +17,9 @@ def connected():
     crazyflie.param.set_value("motors.motorPowerM3","50000")
     crazyflie.param.set_value("motors.motorPowerM4","50000")
 
-crazyflie = Crazyflie()
-crazyflie.connected.add_callback(connected())
+try:
+    crazyflie = Crazyflie()
+    crazyflie.connected.add_callback(connected())
+    connect()
+except:
+    disconnect()
