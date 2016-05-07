@@ -4,6 +4,10 @@ import cflib.crtp
 
 
 def connect():
+    available = cflib.crtp.scan_interfaces()
+    for i in available:
+        print "Interface with URI [%s] found and name/comment [%s]" % (i[0], i[1])
+    address = input("Please enter the connection string:  ")
     crazyflie.open_link("radio://0/80/250K")
 
 
@@ -18,6 +22,7 @@ def connected():
     crazyflie.param.set_value("motors.motorPowerM4","50000")
 
 try:
+    cflib.crtp.init_drivers()
     crazyflie = Crazyflie()
     crazyflie.connected.add_callback(connected())
     connect()
