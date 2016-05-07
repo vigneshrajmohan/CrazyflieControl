@@ -2,7 +2,7 @@ from cflib.crazyflie import Crazyflie
 from cflib.utils import callbacks
 import cflib.crtp
 import time
-from time import sleep
+#from time import sleep
 
 
 def connect():
@@ -19,7 +19,7 @@ def disconnect():
 def connected(*args):
     # Code here
     fly()
-    #time.sleep(3000)
+    time.sleep(2)
     cutthewings()
 
 
