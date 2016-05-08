@@ -136,8 +136,8 @@ class MotorRampExample:
 
     def _ramp_motors(self):
         thrust_mult = 1
-        thrust_step = 50
-        thrust = 50000
+        thrust_step = 500
+        thrust = 35000
         pitch = 0
         roll = 0
         yawrate = 0
