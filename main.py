@@ -72,8 +72,8 @@ def cutthewings():
     crazyflie.param.set_value("motors.motorPowerM3","0")
     crazyflie.param.set_value("motors.motorPowerM4","0")
 
-def gyro();
-    crazyflie.param.get_value("gyro.x")
+# def gyro():
+#     crazyflie.param.get_value("gyro.x")
 
 
 
