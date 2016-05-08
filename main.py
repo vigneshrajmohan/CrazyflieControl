@@ -21,17 +21,19 @@ def disconnect():
 def connected(*args):
     # Code here
 
-    send_setpoint(roll, pitch, yaw, thrust):
+    roll    = 0.0
+    pitch   = 0.0
+    yawrate = 0
+    thrust  = 10000
+
+    send_setpoint(roll, pitch, yaw, thrust)
         # """
         # Send a new control set-point for roll/pitch/yaw/thust to the copter
         #
         # The arguments roll/pitch/yaw/trust is the new set-points that should
         # be sent to the copter
         # """
-        roll    = 0.0
-        pitch   = 0.0
-        yawrate = 0
-        thrust  = 10000
+
         crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
 
     # for i in range(10000, 30001, 300):
