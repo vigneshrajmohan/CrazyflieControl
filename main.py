@@ -137,7 +137,7 @@ class MotorRampExample:
     def _ramp_motors(self):
         thrust_mult = 1
         thrust_step = 200
-        thrust = 37000
+        thrust = 40000
         pitch = 0
         roll = 0
         yawrate = 0
@@ -171,4 +171,4 @@ if __name__ == '__main__':
     if len(available) > 0:
         le = MotorRampExample(available[0][0])
     else:
-        print('No Crazyflies found, cannot run example')
+        print('No Crazyflies found, cannot run code')
