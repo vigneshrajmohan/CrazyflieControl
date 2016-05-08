@@ -36,7 +36,7 @@ def connected(*args):
 
     #crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
 
-    for i in range(10000, 30001, 300):
+    for i in range(10000, 50001, 1000):
         crazyflie.param.set_value("motors.motorPowerM1", str(i))
         crazyflie.param.set_value("motors.motorPowerM2", str(i))
         crazyflie.param.set_value("motors.motorPowerM3", str(i))
@@ -46,7 +46,7 @@ def connected(*args):
 
     #time.sleep(3)
 
-    for j in range(30000, 0, -300):
+    for j in range(50000, 0, -1000):
         crazyflie.param.set_value("motors.motorPowerM1", str(j))
         crazyflie.param.set_value("motors.motorPowerM2", str(j))
         crazyflie.param.set_value("motors.motorPowerM3", str(j))
