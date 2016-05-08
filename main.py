@@ -39,17 +39,17 @@ def connected(*args):
         # crazyflie.param.set_value("motors.motorPowerM2", str(i))
         # crazyflie.param.set_value("motors.motorPowerM3", str(i))
         # crazyflie.param.set_value("motors.motorPowerM4", str(i))
-        # fly(i)
+        fly(i)
         print(i)
 
     #time.sleep(3)
 
     for j in range(30000, 0, -300):
-        crazyflie.param.set_value("motors.motorPowerM1", str(j))
-        crazyflie.param.set_value("motors.motorPowerM2", str(j))
-        crazyflie.param.set_value("motors.motorPowerM3", str(j))
-        crazyflie.param.set_value("motors.motorPowerM4", str(j))
-        # fly(j)
+        # crazyflie.param.set_value("motors.motorPowerM1", str(j))
+        # crazyflie.param.set_value("motors.motorPowerM2", str(j))
+        # crazyflie.param.set_value("motors.motorPowerM3", str(j))
+        # crazyflie.param.set_value("motors.motorPowerM4", str(j))
+        fly(j)
         print(j)
 
     cutthewings()
