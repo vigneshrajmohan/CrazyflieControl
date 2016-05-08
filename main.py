@@ -54,7 +54,9 @@ def connected(*args):
         crazyflie.param.set_value("motors.motorPowerM4", str(j))
         # fly(j)
         print(j)
+    print("This is a test yo")
     print (crazyflie.param.get_value("gyro.x"))
+    print("This is the bottom of a test ahah")
     # cutthewings()
     # print("This is the end")
 
