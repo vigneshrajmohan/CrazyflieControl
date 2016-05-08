@@ -2,6 +2,8 @@ from cflib.crazyflie import Crazyflie
 from cflib.utils import callbacks
 import cflib.crtp
 import time
+import logging
+logging.basicConfig(level=logging.ERROR)
 #from time import sleep
 
 
