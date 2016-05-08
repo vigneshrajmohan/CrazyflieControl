@@ -31,7 +31,7 @@ def connected(*args):
     #    crazyflie.param.set_value("motors.motorPowerM4", str(i))
     # print(i)
     #
-    time.sleep(5)
+    time.sleep(3)
     cutthewings()
     # print("This is the end")
 
