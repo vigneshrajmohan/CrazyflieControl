@@ -108,7 +108,7 @@ class MotorRampExample:
         self._cf.connection_failed.add_callback(self._connection_failed)
         self._cf.connection_lost.add_callback(self._connection_lost)
         link_uri = "radio://0/80/250K"
-        self._cf.open_link("link_uri")
+        self._cf.open_link(link_uri)
 
         print('Connecting to %s' % link_uri)
 
