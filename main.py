@@ -25,32 +25,32 @@ def connected(*args):
     #crazyflie.param.set_value("motors.motorPowerM3","5000")
     #crazyflie.param.set_value("motors.motorPowerM4","5000")
     for i in range(10000, 55001, 1000):
-        crazyflie.param.set_value("motors.motorPowerM1", str(i))
-        crazyflie.param.set_value("motors.motorPowerM2", str(i))
-        crazyflie.param.set_value("motors.motorPowerM3", str(i))
-        crazyflie.param.set_value("motors.motorPowerM4", str(i))
-
+        # crazyflie.param.set_value("motors.motorPowerM1", str(i))
+        # crazyflie.param.set_value("motors.motorPowerM2", str(i))
+        # crazyflie.param.set_value("motors.motorPowerM3", str(i))
+        # crazyflie.param.set_value("motors.motorPowerM4", str(i))
+        fly(i)
         print(i)
 
     #time.sleep(3)
 
     for j in range(55000, 0, -1000):
-        crazyflie.param.set_value("motors.motorPowerM1", str(j))
-        crazyflie.param.set_value("motors.motorPowerM2", str(j))
-        crazyflie.param.set_value("motors.motorPowerM3", str(j))
-        crazyflie.param.set_value("motors.motorPowerM4", str(j))
-
+        # crazyflie.param.set_value("motors.motorPowerM1", str(j))
+        # crazyflie.param.set_value("motors.motorPowerM2", str(j))
+        # crazyflie.param.set_value("motors.motorPowerM3", str(j))
+        # crazyflie.param.set_value("motors.motorPowerM4", str(j))
+        fly(j)
         print(j)
 
     cutthewings()
     # print("This is the end")
 
-def fly():
+def fly(ii):
 #function
-    crazyflie.param.set_value("motors.motorPowerM1","5000")
-    crazyflie.param.set_value("motors.motorPowerM2","5000")
-    crazyflie.param.set_value("motors.motorPowerM3","5000")
-    crazyflie.param.set_value("motors.motorPowerM4","5000")
+    crazyflie.param.set_value("motors.motorPowerM1",str[ii])
+    crazyflie.param.set_value("motors.motorPowerM2",str[ii])
+    crazyflie.param.set_value("motors.motorPowerM3",str[ii])
+    crazyflie.param.set_value("motors.motorPowerM4",str[ii])
 
 def cutthewings():
 #function
