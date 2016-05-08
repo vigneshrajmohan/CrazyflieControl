@@ -21,36 +21,36 @@ def disconnect():
 def connected(*args):
     # Code here
 
-    # send_setpoint(roll, pitch, yaw, thrust):
-    #     """
-    #     Send a new control set-point for roll/pitch/yaw/thust to the copter
+    send_setpoint(roll, pitch, yaw, thrust):
+        # """
+        # Send a new control set-point for roll/pitch/yaw/thust to the copter
+        #
+        # The arguments roll/pitch/yaw/trust is the new set-points that should
+        # be sent to the copter
+        # """
+    roll    = 0.0
+    pitch   = 0.0
+    yawrate = 0
+    thrust  = 10000
+    crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
+
+    # for i in range(10000, 30001, 300):
+    #     crazyflie.param.set_value("motors.motorPowerM1", str(i))
+    #     crazyflie.param.set_value("motors.motorPowerM2", str(i))
+    #     crazyflie.param.set_value("motors.motorPowerM3", str(i))
+    #     crazyflie.param.set_value("motors.motorPowerM4", str(i))
+    #     # fly(i)
+    #     print(i)
     #
-    #     The arguments roll/pitch/yaw/trust is the new set-points that should
-    #     be sent to the copter
-    #     """
-    # roll    = 0.0
-    # pitch   = 0.0
-    # yawrate = 0
-    # thrust  = 0
-    # crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
-
-    for i in range(10000, 30001, 300):
-        # crazyflie.param.set_value("motors.motorPowerM1", str(i))
-        # crazyflie.param.set_value("motors.motorPowerM2", str(i))
-        # crazyflie.param.set_value("motors.motorPowerM3", str(i))
-        # crazyflie.param.set_value("motors.motorPowerM4", str(i))
-        fly(i)
-        print(i)
-
-    #time.sleep(3)
-
-    for j in range(30000, 0, -300):
-        # crazyflie.param.set_value("motors.motorPowerM1", str(j))
-        # crazyflie.param.set_value("motors.motorPowerM2", str(j))
-        # crazyflie.param.set_value("motors.motorPowerM3", str(j))
-        # crazyflie.param.set_value("motors.motorPowerM4", str(j))
-        fly(j)
-        print(j)
+    # #time.sleep(3)
+    #
+    # for j in range(30000, 0, -300):
+    #     crazyflie.param.set_value("motors.motorPowerM1", str(j))
+    #     crazyflie.param.set_value("motors.motorPowerM2", str(j))
+    #     crazyflie.param.set_value("motors.motorPowerM3", str(j))
+    #     crazyflie.param.set_value("motors.motorPowerM4", str(j))
+    #     # fly(j)
+    #     print(j)
 
     cutthewings()
     # print("This is the end")
