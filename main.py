@@ -24,7 +24,7 @@ def connected(*args):
     #crazyflie.param.set_value("motors.motorPowerM2","5000")
     #crazyflie.param.set_value("motors.motorPowerM3","5000")
     #crazyflie.param.set_value("motors.motorPowerM4","5000")
-    for i in range(10000, 65001, 500):
+    for i in range(10000, 55001, 1000):
         crazyflie.param.set_value("motors.motorPowerM1", str(i))
         crazyflie.param.set_value("motors.motorPowerM2", str(i))
         crazyflie.param.set_value("motors.motorPowerM3", str(i))
@@ -34,7 +34,7 @@ def connected(*args):
 
     #time.sleep(3)
 
-    for j in range(65000, 0, -1000):
+    for j in range(55000, 0, -1000):
         crazyflie.param.set_value("motors.motorPowerM1", str(j))
         crazyflie.param.set_value("motors.motorPowerM2", str(j))
         crazyflie.param.set_value("motors.motorPowerM3", str(j))
