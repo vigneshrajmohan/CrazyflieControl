@@ -44,8 +44,9 @@ def connected(*args):
         # fly(i)
         print(i)
 
-    #time.sleep(3)
 
+    # time.sleep(3)
+    #
     for j in range(50000, 0, -1000):
         crazyflie.param.set_value("motors.motorPowerM1", str(j))
         crazyflie.param.set_value("motors.motorPowerM2", str(j))
@@ -53,8 +54,8 @@ def connected(*args):
         crazyflie.param.set_value("motors.motorPowerM4", str(j))
         # fly(j)
         print(j)
-
-    cutthewings()
+    print (crazyflie.param.get_value("gyro.x"))
+    # cutthewings()
     # print("This is the end")
 
 def fly(ii):
@@ -70,6 +71,10 @@ def cutthewings():
     crazyflie.param.set_value("motors.motorPowerM2","0")
     crazyflie.param.set_value("motors.motorPowerM3","0")
     crazyflie.param.set_value("motors.motorPowerM4","0")
+
+def gyro();
+    crazyflie.param.get_value("gyro.x")
+
 
 
 
