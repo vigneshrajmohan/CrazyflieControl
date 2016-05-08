@@ -34,7 +34,7 @@ def connected(*args):
         # be sent to the copter
         # """
 
-        crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
+    crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
 
     # for i in range(10000, 30001, 300):
     #     crazyflie.param.set_value("motors.motorPowerM1", str(i))
