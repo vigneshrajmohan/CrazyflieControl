@@ -34,13 +34,13 @@ def connected(*args):
 
     #time.sleep(3)
 
-    for i in range(25000, 0, 50):
-        crazyflie.param.set_value("motors.motorPowerM1", str(i))
-        crazyflie.param.set_value("motors.motorPowerM2", str(i))
-        crazyflie.param.set_value("motors.motorPowerM3", str(i))
-        crazyflie.param.set_value("motors.motorPowerM4", str(i))
+    for j in range(25000, 0, -50):
+        crazyflie.param.set_value("motors.motorPowerM1", str(j))
+        crazyflie.param.set_value("motors.motorPowerM2", str(j))
+        crazyflie.param.set_value("motors.motorPowerM3", str(j))
+        crazyflie.param.set_value("motors.motorPowerM4", str(j))
 
-        print(i)
+        print(j)
 
     cutthewings()
     # print("This is the end")
