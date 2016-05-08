@@ -28,11 +28,11 @@ def connected(*args):
         # The arguments roll/pitch/yaw/trust is the new set-points that should
         # be sent to the copter
         # """
-    roll    = 0.0
-    pitch   = 0.0
-    yawrate = 0
-    thrust  = 10000
-    crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
+        roll    = 0.0
+        pitch   = 0.0
+        yawrate = 0
+        thrust  = 10000
+        crazyflie.commander.send_setpoint(roll, pitch, yawrate, thrust)
 
     # for i in range(10000, 30001, 300):
     #     crazyflie.param.set_value("motors.motorPowerM1", str(i))
@@ -52,7 +52,7 @@ def connected(*args):
     #     # fly(j)
     #     print(j)
 
-    cutthewings()
+    #cutthewings()
     # print("This is the end")
 
 def fly(ii):
