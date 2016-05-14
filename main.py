@@ -138,7 +138,7 @@ class MotorRampExample:
         thrust_mult = 1
         thrust_step = 1000
         # originally 200
-        thrust = 20000
+        thrust = 25000
         # originally 40000
         pitch = 0
         roll = 0
@@ -155,7 +155,7 @@ class MotorRampExample:
                 # originally it was 25000
                 thrust_mult = -5
                 thrust = 0
-            thrust += thrust_step * thrust_mult
+            #thrust += thrust_step * thrust_mult
         self._cf.commander.send_setpoint(0, 0, 0, 0)
         # Make sure that the last packet leaves before the link is closed
         # since the message queue is not flushed before closing
