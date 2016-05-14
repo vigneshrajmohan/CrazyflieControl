@@ -138,8 +138,8 @@ class MotorRampExample:
         thrust_mult = 1
         thrust_step = 1000
         # originally 200
-        thrust_initial = 30000
-        thrust = 10000
+        thrust_initial = 32000
+        thrust = 18000
         # originally 40000
         pitch = 0
         roll = 0
