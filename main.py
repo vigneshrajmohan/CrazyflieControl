@@ -138,8 +138,8 @@ class MotorRampExample:
         thrust_mult = 1
         thrust_step = 1000
         # originally 200
-        thrust_initial = 30000
-        thrust = 20000
+        thrust_initial = 25000
+        thrust = 18000
         # originally 40000
         pitch = 0
         roll = 0
@@ -151,9 +151,9 @@ class MotorRampExample:
 
         self._cf.param.set_value("flightmode.althold","True")
         self._cf.commander.send_setpoint(0, 0, 0, thrust_initial)
-        
+
         time.sleep(2)
-        for num in range(0,15):
+        for num in range(0,10):
             self._cf.param.set_value("flightmode.althold","True")
             self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(1)
