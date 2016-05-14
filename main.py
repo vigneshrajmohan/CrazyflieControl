@@ -138,24 +138,31 @@ class MotorRampExample:
         thrust_mult = 1
         thrust_step = 1000
         # originally 200
-        thrust = 25000
+        thrust = 15000
         # originally 40000
         pitch = 0
         roll = 0
         yawrate = 0
+        num=0
 
         # Unlock startup thrust protection
         self._cf.commander.send_setpoint(0, 0, 0, 0)
 
-        while thrust >= 15000:
-            # originally 20000
-            self._cf.commander.send_setpoint(roll, pitch, yawrate, thrust)
-            time.sleep(0.1)
-            if thrust >= 21000:
-                # originally it was 25000
-                thrust_mult = -5
-                thrust = 0
-            #thrust += thrust_step * thrust_mult
+        for num in range(10,15):
+            self._cf.commander.send_setpoint(0, 0, 0, thrust)
+            self._cf.param.set_value("flightmode.althold","True")
+            time.sleep(0.2)
+
+
+        # while thrust >= 15000:
+        #     # originally 20000
+        #     self._cf.commander.send_setpoint(roll, pitch, yawrate, thrust)
+        #     time.sleep(0.1)
+        #     if thrust >= 21000:
+        #         # originally it was 25000
+        #         thrust_mult = -5
+        #
+        #     thrust += thrust_step * thrust_mult
         self._cf.commander.send_setpoint(0, 0, 0, 0)
         # Make sure that the last packet leaves before the link is closed
         # since the message queue is not flushed before closing
