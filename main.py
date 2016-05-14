@@ -147,12 +147,11 @@ class MotorRampExample:
 
         # Unlock startup thrust protection
         self._cf.commander.send_setpoint(0, 0, 0, 0)
+        self._cf.param.set_value("flightmode.althold","True")
 
-        for num in range(10,15):
+        for num in range(10,30):
             self._cf.commander.send_setpoint(0, 0, 0, thrust)
-            self._cf.param.set_value("flightmode.althold","True")
-            time.sleep(0.2)
-
+            time.sleep(1)
 
         # while thrust >= 15000:
         #     # originally 20000
