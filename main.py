@@ -151,7 +151,7 @@ class MotorRampExample:
 
         self._cf.param.set_value("flightmode.althold","True")
         self._cf.commander.send_setpoint(0, 0, 0, thrust_initial)
-        time.sleep(1)
+        time.sleep(2)
         for num in range(0,5):
             self._cf.param.set_value("flightmode.althold","True")
             self._cf.commander.send_setpoint(0, 0, 0, thrust)
