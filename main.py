@@ -141,7 +141,7 @@ class MotorRampExample:
         thrust_initial = 60000
         thrust = 55000
         # originally 40000
-        pitch = 0
+        pitch = 5
         roll = 0
         yawrate = 0
         num=0
