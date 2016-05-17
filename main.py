@@ -150,33 +150,33 @@ class MotorRampExample:
 
         self._cf.commander.send_setpoint(0, 0, 0, 0)
 
-        # self._cf.param.set_value("flightmode.althold","True")
-        # self._cf.commander.send_setpoint(0, 0, 0, startthrust)
+        self._cf.param.set_value("flightmode.althold","True")
+        self._cf.commander.send_setpoint(0, 0, 0, startthrust)
         time.sleep(itime*2)
         print(num, thrust, itime*2)
 
         for num in range(0,4,1):
             thrust += num * thrustchange
-            # self._cf.param.set_value("flightmode.althold","True")
-            # self._cf.commander.send_setpoint(0, 0, 0, thrust)
+            self._cf.param.set_value("flightmode.althold","True")
+            self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(itime)
             print(num, thrust, itime)
 
 
         for num in range(4,1,-1):
             thrust -= num * thrustchange
-            # self._cf.param.set_value("flightmode.althold","True")
-            # self._cf.commander.send_setpoint(0, 0, 0, thrust)
+            self._cf.param.set_value("flightmode.althold","True")
+            self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(itime)
             print(num, thrust, itime)
             thrust -= num * thrustchange
-            # self._cf.param.set_value("flightmode.althold","True")
-            # self._cf.commander.send_setpoint(0, 0, 0, thrust)
+            self._cf.param.set_value("flightmode.althold","True")
+            self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(itime)
             print(num, thrust, itime)
             thrust -= num * thrustchange
-            # self._cf.param.set_value("flightmode.althold","True")
-            # self._cf.commander.send_setpoint(0, 0, 0, thrust)
+            self._cf.param.set_value("flightmode.althold","True")
+            self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(itime)
             print(num, thrust, itime)
 
