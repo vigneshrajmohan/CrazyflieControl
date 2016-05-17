@@ -146,23 +146,26 @@ class MotorRampExample:
         yawrate = 0
 
         num = 0
+        itime = 0.25
 
         self._cf.commander.send_setpoint(0, 0, 0, 0)
 
         self._cf.param.set_value("flightmode.althold","True")
         self._cf.commander.send_setpoint(0, 0, 0, startthrust)
-        time.sleep(.5)
+        time.sleep(itime*2)
 
         for num in range(0,5):
             self._cf.param.set_value("flightmode.althold","True")
             self._cf.commander.send_setpoint(0, 0, 0, thrust)
-            time.sleep(0.25)
+            time.sleep(itime)
+            print(thrust, itime)
             thrust += num * thrustchange
 
         for num in range(0,5):
             self._cf.param.set_value("flightmode.althold","True")
             self._cf.commander.send_setpoint(0, 0, 0, thrust)
-            time.sleep(0.25)
+            time.sleep(itime)
+            print(thrust, itime)
             thrust -= num * thrustchange
 
 
