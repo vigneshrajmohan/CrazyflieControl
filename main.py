@@ -150,20 +150,21 @@ class MotorRampExample:
 
         self._cf.commander.send_setpoint(0, 0, 0, 0)
 
-        self._cf.param.set_value("flightmode.althold","True")
-        self._cf.commander.send_setpoint(0, 0, 0, startthrust)
+        # self._cf.param.set_value("flightmode.althold","True")
+        # self._cf.commander.send_setpoint(0, 0, 0, startthrust)
         time.sleep(itime*2)
+        print(thrust, itime)
 
-        for num in range(0,5):
-            self._cf.param.set_value("flightmode.althold","True")
-            self._cf.commander.send_setpoint(0, 0, 0, thrust)
+        for num in range(1,6):
+            # self._cf.param.set_value("flightmode.althold","True")
+            # self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(itime)
             print(thrust, itime)
             thrust += num * thrustchange
 
-        for num in range(0,5):
-            self._cf.param.set_value("flightmode.althold","True")
-            self._cf.commander.send_setpoint(0, 0, 0, thrust)
+        for num in range(7,3):
+            # self._cf.param.set_value("flightmode.althold","True")
+            # self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(itime)
             print(thrust, itime)
             thrust -= num * thrustchange
@@ -184,6 +185,8 @@ class MotorRampExample:
         #         thrust_coeff = -5
         #
         #     thrust += thrustchange * thrust_coeff
+
+
         self._cf.commander.send_setpoint(0, 0, 0, 0)
         # Make sure that the last packet leaves before the link is closed
         # since the message queue is not flushed before closing
