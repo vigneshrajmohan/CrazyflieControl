@@ -118,7 +118,7 @@ class MotorRampExample:
 
         # Start a separate thread to do the motor test.
         # Do not hijack the calling thread!
-        Thread(target=self._ramp_motors).start()
+        Thread(target=self._hover_motion).start()
 
     def _connection_failed(self, link_uri, msg):
         """Callback when connection initial connection fails (i.e no Crazyflie
@@ -134,33 +134,37 @@ class MotorRampExample:
         """Callback when the Crazyflie is disconnected (called in all cases)"""
         print('Disconnected from %s' % link_uri)
 
-    def _ramp_motors(self):
-        thrust_mult = 1
-        thrust_step = 1000
-        # originally 200
-        thrust_initial = 60000
+    def _hover_motion(self):
+
+        thrustchange = 1000
+        startthrust = 60000
+
+        #measurements
         thrust = 55000
-        # originally 40000
-        pitch = 50
+        pitch = 0
         roll = 0
         yawrate = 0
-        num=0
 
-        # Unlock startup thrust protection
+        num = 0
+
         self._cf.commander.send_setpoint(0, 0, 0, 0)
 
         self._cf.param.set_value("flightmode.althold","True")
-        self._cf.commander.send_setpoint(0, 0, 0, thrust_initial)
+        self._cf.commander.send_setpoint(0, 0, 0, startthrust)
         time.sleep(.5)
+
         for num in range(0,5):
             self._cf.param.set_value("flightmode.althold","True")
             self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(0.25)
-            thrust += num*thrust_step
-            print ('roll:')
-            print(roll)
-            print ('pitch:')
-            print(pitch)
+            thrust += num * thrustchange
+
+        for num in range(0,5):
+            self._cf.param.set_value("flightmode.althold","True")
+            self._cf.commander.send_setpoint(0, 0, 0, thrust)
+            time.sleep(0.25)
+            thrust -= num * thrustchange
+
 
         # thrust = 15000
         # self._cf.param.set_value("flightmode.althold","True")
@@ -174,9 +178,9 @@ class MotorRampExample:
         #     time.sleep(0.1)
         #     if thrust >= 21000:
         #         # originally it was 25000
-        #         thrust_mult = -5
+        #         thrust_coeff = -5
         #
-        #     thrust += thrust_step * thrust_mult
+        #     thrust += thrustchange * thrust_coeff
         self._cf.commander.send_setpoint(0, 0, 0, 0)
         # Make sure that the last packet leaves before the link is closed
         # since the message queue is not flushed before closing
