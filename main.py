@@ -157,6 +157,8 @@ class MotorRampExample:
             self._cf.commander.send_setpoint(0, 0, 0, thrust)
             time.sleep(0.25)
             thrust += num*thrust_step
+            print ('thrust:')
+            print (thrust)
 
         # thrust = 15000
         # self._cf.param.set_value("flightmode.althold","True")
@@ -178,6 +180,7 @@ class MotorRampExample:
         # since the message queue is not flushed before closing
         time.sleep(0.1)
         self._cf.close_link()
+
 
 
 if __name__ == '__main__':
