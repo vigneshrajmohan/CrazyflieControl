@@ -146,7 +146,7 @@ class Crazy_Auto:
          self._cf.connection_failed.add_callback(self._connection_failed) #second monitor thread for checking for back connection to crazyflie
          self._cf.connection_lost.add_callback(self._connection_lost) # third monitor thread checking for lost connection
 
-         print "Connecting to %s" % link_uri
+         print ("Connecting to %s" % link_uri)
 
          self._cf.open_link(link_uri) #connects to crazyflie and downloads TOC/Params
 
