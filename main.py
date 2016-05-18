@@ -155,7 +155,7 @@ class Crazy_Auto:
 ### ---------------------------------------------------------- Main Flight States ---------------------------------------------------------------###
      def hover_mode(self):
          self.is_hovering = True
-         print "hovering"
+         print ("hovering")
          #t = Timer(10, self._land_copter())
          #t.start()
          yawrate = 0
@@ -168,7 +168,7 @@ class Crazy_Auto:
                  self.next_thrust += self.hover_thrust_step
              elif self.t.gyro_state[2] <= -self.gyro_threash:
                  self.next_thrust -= self.hover_thrust_step*2
-             print self.next_thrust
+             print (self.next_thrust)
              #self.next_thrust = self.curr_thrust + (self.hover_alt - self.altitude[1])*self.thrust_step
              #print self.t.gyro_state
              self._cf.commander.send_setpoint(self.next_roll + self.roll_trim, self.next_pitch+self.pitch_trim, yawrate, self.next_thrust)
@@ -191,13 +191,13 @@ class Crazy_Auto:
          sleep_step = .1
          co = 0
          #print self.t.altitude, self.hover_alt
-         print "taking off"
+         print ("taking off")
          while self.t.altitude[1] <= self.hover_alt or self.curr_thrust < self.take_off_thrust:
              if self.t.altitude[1] < self.t.altitude[0]:
                  self.t.altitude[0] = self.t.altitude[1]
                  self.hover_alt = self.t.altitude[0] + self.hover_alt_step
              #print self.t.altitude, self.hover_alt
-             print "roll: ",self.next_roll, "pitch: ",self.next_pitch, "gyro: ",self.t.gyro_state
+             print ("roll: ",self.next_roll, "pitch: ",self.next_pitch, "gyro: ",self.t.gyro_state)
              #print self.altitude, self.hover_alt
              self._cf.commander.send_setpoint(self.next_roll+self.roll_trim, self.next_pitch + self.pitch_trim, yawrate,self.curr_thrust)
              self.curr_thrust += self.take_off_thrust_step
@@ -214,7 +214,7 @@ class Crazy_Auto:
 
      def _land_copter(self):
          self.is_hovering = False
-         print "landing"
+         print ("landing")
          landing_thrust = self.curr_thrust
          while self.altitude[1]  <= self.altitude[0]:# or abs(self.accel_state[2]) > 0:
              landing_thrust -= self.thrust_step
@@ -232,7 +232,7 @@ class Crazy_Auto:
      def fly_circle(self, max_angle):
          yaw = 0
          count = 0
-         print "start circle"
+         print ("start circle")
          increment = (max_angle/2)*.1
          self.is_hovering = True
          if self.is_hovering:
@@ -241,7 +241,7 @@ class Crazy_Auto:
              pitch_circle = 0
              while (roll_circle > 0 and pitch_circle < max_angle):
                  self._cf.commander.send_setpoint( roll_circle,+pitch_circle, yaw, self.next_thrust)
-                 print '1'
+                 print ('1')
                  roll_circle -= increment
                  pitch_circle += increment
                  time.sleep(.1)
@@ -250,7 +250,7 @@ class Crazy_Auto:
              pitch_circle = max_angle
              while (roll_circle > -(max_angle) and pitch_circle > 0):
                  self._cf.commander.send_setpoint(roll_circle, pitch_circle, yaw, self.next_thrust)
-                 print '2'
+                 print ('2')
 
                  roll_circle -= increment
                  pitch_circle -= increment
@@ -260,7 +260,7 @@ class Crazy_Auto:
              pitch_circle = 0
              while (roll_circle < 0 and pitch_circle > -(max_angle)):
                  self._cf.commander.send_setpoint(roll_circle,pitch_circle, yaw, self.next_thrust)
-                 print '3'
+                 print ('3')
                  roll_circle += increment
                  pitch_circle -= increment
                  time.sleep(.1)
@@ -270,14 +270,14 @@ class Crazy_Auto:
              pitch_circle = -max_angle
              while (roll_circle < (max_angle) and pitch_circle < 0):
                  self._cf.commander.send_setpoint(roll_circle,pitch_circle, yaw, self.next_thrust)
-                 print '4'
+                 print ('4')
                  roll_circle += increment
                  pitch_circle += increment
                  time.sleep(.1)
 
      def _ramp_motors(self):
-         print "Starting Flight"
-         print "Start Roll, Pitch", self.init_state
+         print ("Starting Flight")
+         print ("Start Roll, Pitch", self.init_state)
          timer_start = False
          self.is_flying = True
          thrust_mult = 1
@@ -307,7 +307,7 @@ class Crazy_Auto:
      def kill_check(self): #
          if self.t.accel_state[3] >= self.kill_threash:
              self._cf.commander.send_setpoint(0,0,0,0);
-             print "QUADCOPTER KILLED --- Acceleration Mag: ", self.t.accel_state
+             print ("QUADCOPTER KILLED --- Acceleration Mag: ", self.t.accel_state)
              self.is_hovering = False
              self.is_flying = False
              self._cf.close_link()
@@ -321,7 +321,7 @@ class Crazy_Auto:
 
 
      def update_error(self, logconf, msg):
-         print "Error when logging %s: %s" % (logconf.name, msg)
+         print ("Error when logging %s: %s" % (logconf.name, msg))
 
      def update_vals(self):
          #m = self.t.get_measurements() #  m = [roll,pitch,yaw,altitude,acc.x,acc.y,acc.z,acc.mag,gyro.x, gyro.y, gyro.z, batteryV]
@@ -366,26 +366,26 @@ class Crazy_Auto:
          # Do not hijack the calling thread!
          Thread(target=self.update_vals).start()
          #Thread(target=self.kill_check).start()
-         print "Waiting for logs to initalize..."
+         print ("Waiting for logs to initalize...")
          Thread(target=self._take_off).start()
 
 
      def _connection_failed(self, link_uri, msg):
          """Callback when connection initial connection fails (i.e no Crazyflie
          at the speficied address)"""
-         print "Connection to %s failed: %s" % (link_uri, msg)
+         print ("Connection to %s failed: %s" % (link_uri, msg))
          self.is_connected = False
 
      def _connection_lost(self, link_uri, msg):
          """Callback when disconnected after a connection has been made (i.e
          Crazyflie moves out of range)"""
-         print "Connection to %s lost: %s" % (link_uri, msg)
+         print ("Connection to %s lost: %s" % (link_uri, msg))
          self.is_connected = False
 
      def _disconnected(self, link_uri):
          """Callback when the Crazyflie is disconnected (called in all cases)"""
 
-         print "Disconnected from %s" % link_uri
+         print ("Disconnected from %s" % link_uri)
          self.is_connected = False
  ### ------------------------------------------------------ END CALLBACKS ------------------------------------------
 
