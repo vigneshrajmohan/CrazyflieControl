@@ -80,7 +80,7 @@ import logging
 logging.basicConfig(level=logging.ERROR)
 
 #import crazy_auto1
-import crazy_auto1
+import crazy_auto
 from pykalman import KalmanFilter
 import numpy as np
 
