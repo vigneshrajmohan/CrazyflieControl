@@ -86,7 +86,7 @@ import numpy as np
 
 class logs:
 
-    def __init__(self, cf):
+     def __init__(self, cf):
 
         #self.log_file_next_stuff = open("log_file_next.txt", "w+")
         #self.log_file_stab = open("log_file_stab.txt", "w+")
@@ -245,7 +245,7 @@ class logs:
          self.next_state[1] = self.state[1] - self.init_state[0]
 
 
-    def log_file_print(self, file, data):
+     def log_file_print(self, file, data):
          for i in range(len(data)):
              file.write(str(data[i]))
              file.write(',')
