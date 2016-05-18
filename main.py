@@ -96,7 +96,7 @@ class logs:
 
         # Roll, Pitch, Yaw
          self.init_state = [0,0,0]
-        self.state = [0,0,0]
+         self.state = [0,0,0]
          self.next_state = [0,0]
          # X, Y, Z, Mag
          self.init_accel_state = [0,0,0,0]
@@ -132,9 +132,9 @@ class logs:
 
      def _init_flight_var(self, link_uri):
 
-        print ("Connected to %s" % link_uri)
+         print ("Connected to %s" % link_uri)
 
-        self.RPY_log = LogConfig(name="Stabilizer", period_in_ms=10)
+         self.RPY_log = LogConfig(name="Stabilizer", period_in_ms=10)
 
          self.RPY_log.add_variable("stabilizer.roll", "float")
          self.RPY_log.add_variable("stabilizer.pitch", "float")
@@ -162,8 +162,8 @@ class logs:
          self.battery_log.data_received_cb.add_callback(self.update_battery)
          self.battery_log.error_cb.add_callback(self.update_error)
 
-        self.acc_log.data_received_cb.add_callback(self.update_acc)
-        self.acc_log.error_cb.add_callback(self.update_error)
+         self.acc_log.data_received_cb.add_callback(self.update_acc)
+         self.acc_log.error_cb.add_callback(self.update_error)
 
 
          self.RPY_log.start()
