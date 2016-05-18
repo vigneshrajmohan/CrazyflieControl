@@ -62,31 +62,30 @@
 
 """ Autonomous flight library for Crazyflie2 """
 
- import sys
- sys.path.append("../lib")
+import sys
+sys.path.append("../lib")
 
- import time
+import time
 
- from threading import Thread, Timer
+from threading import Thread, Timer
 
- #Has to be launched from within the autonomous folder
+#Has to be launched from within the autonomous folder
 
- import cflib
- from cflib.crazyflie import Crazyflie
+import cflib
+from cflib.crazyflie import Crazyflie
 
- import cflib.crtp
- from cfclient.utils.logconfigreader import LogConfig
+import cflib.crtp
+from cfclient.utils.logconfigreader import LogConfig
 
- import numpy as np
+import numpy as np
 
- import logging
- logging.basicConfig(level=logging.ERROR)
+import logging
+logging.basicConfig(level=logging.ERROR)
 
- import Sensors
+import Sensors
 
 
-
- class Crazy_Auto:
+class Crazy_Auto:
      """ Basic calls and functions to enable autonomous flight """
      def __init__(self, link_uri):
          """ Initialize crazyflie using passed in link"""
