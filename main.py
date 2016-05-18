@@ -60,9 +60,7 @@
 
 # --- Shanthi's find begins -----------------------------------------------*****
 
- """
- Autonomous flight library for Crazyflie2
- """
+""" Autonomous flight library for Crazyflie2 """
 
  import sys
  sys.path.append("../lib")
