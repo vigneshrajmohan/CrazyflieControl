@@ -301,7 +301,7 @@ class logs:
          else:
              return 0
 
-  if __name__ == '__main__':
+if __name__ == '__main__':
      # Initialize the low-level drivers (don't list the debug drivers)
      cflib.crtp.init_drivers(enable_debug_driver=False)
      # Scan for Crazyflies and use the first one found
