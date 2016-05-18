@@ -79,6 +79,7 @@ from cfclient.utils.logconfigreader import LogConfig
 import logging
 logging.basicConfig(level=logging.ERROR)
 
+#import crazy_auto1
 import crazy_auto1
 from pykalman import KalmanFilter
 import numpy as np
