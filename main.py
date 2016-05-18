@@ -330,8 +330,9 @@ if __name__ == '__main__':
 
 
 
-
-""" Autonomous flight library for Crazyflie2 """
+"""
+Autonomous flight library for Crazyflie2
+"""
 
 import sys
 sys.path.append("../lib")
