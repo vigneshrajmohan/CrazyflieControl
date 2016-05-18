@@ -137,10 +137,10 @@ class MotorRampExample:
     def _hover_motion(self):
 
         thrustchange = 1000
-        startthrust = 60000
+        startthrust = 50000
 
         #measurements
-        thrust = 55000
+        thrust = 45000
         pitch = 0
         roll = 0
         yawrate = 0
