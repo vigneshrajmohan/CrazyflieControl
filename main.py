@@ -178,7 +178,7 @@
              time.sleep(sleep_step)
 
 
-    def _take_off(self):
+     def _take_off(self):
 
          #self.altitude[0] = self.t.get_altitude()
          self.hover_alt = self.t.altitude[0] + self.hover_alt_step
@@ -232,7 +232,7 @@
 
 # ----- circle fly begins ------------------------
 
-   def fly_circle(self, max_angle):
+     def fly_circle(self, max_angle):
          yaw = 0
          count = 0
          print "start circle"
