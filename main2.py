@@ -136,7 +136,7 @@ class MotorRampExample:
 
     def _ramp_motors(self):
         thrust_mult = 1
-        thrust_step = 1000
+        thrust_step = 1001
         # originally 200
         thrust = 25000
         # originally 40000
