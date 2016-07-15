@@ -141,7 +141,7 @@ class MotorRampExample:
 
         #measurements
         thrust = 45000
-        pitch = 0
+        pitch = 25
         roll = 0
         yawrate = 0
 
@@ -159,7 +159,7 @@ class MotorRampExample:
         for num in range(0,4,1):
             thrust += num * thrustchange
             self._cf.param.set_value("flightmode.althold","True")
-            self._cf.commander.send_setpoint(0, 0, 0, thrust)
+            self._cf.commander.send_setpoint(0, 0, pitch, thrust)
             time.sleep(itime)
             print(num, thrust, itime)
 
